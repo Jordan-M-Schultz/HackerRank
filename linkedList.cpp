@@ -13,16 +13,17 @@
  Insert Node at the end of a linked list
  head pointer input could be NULL as well for empty list
  Node is defined as
+*/
 
 struct Node
 {
     int data;
     struct Node *next;
 }
-*/
 
 
-Node* Insert(Node *head,int data)
+
+Node* InsertBack(Node *head,int data)
 {
     Node* start = head;
     Node* insert = new Node;
@@ -41,6 +42,20 @@ Node* Insert(Node *head,int data)
         return start;
         
     }//else
+}
+Node* InsertFront(Node *head,int data)
+{
+    Node * insert = new Node;
+    insert -> data = data;
+    
+    if(!head)
+    {
+        return insert;
+    }else{
+        insert->next = head;
+        return insert;
+    }
+    
 }
 
 void Print(Node *head)
