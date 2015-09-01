@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <iostream>
+#include <stdio.h>
 
 /*
  Insert Node at the end of a linked list
@@ -23,7 +24,7 @@ struct Node
 }
 
 Node* InsertNth(Node *head, int data, int position) {
-
+    cout << "lol " << endl;
     Node *newNode = new Node();
     newNode->data = data;
     newNode->next = NULL;
