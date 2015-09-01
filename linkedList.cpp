@@ -24,7 +24,6 @@ struct Node
 }
 
 Node* InsertNth(Node *head, int data, int position) {
-    cout << "lol " << endl;
     Node *newNode = new Node();
     newNode->data = data;
     newNode->next = NULL;
