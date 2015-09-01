@@ -7,12 +7,13 @@
 //
 
 #include <stdio.h>
-
+#include <string.h>
+#include <iostream>
 
 /*
  Insert Node at the end of a linked list
  head pointer input could be NULL as well for empty list
- Node is defined as
+ Node is defined as:
 */
 
 struct Node
