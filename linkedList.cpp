@@ -7,10 +7,9 @@
 //
 
 #include <stdio.h>
-#include <string.h>
 #include <iostream>
 #include <stdio.h>
-
+using namespace std;
 /*
  Insert Node at the end of a linked list
  head pointer input could be NULL as well for empty list
@@ -21,6 +20,33 @@ struct Node
 {
     int data;
     struct Node *next;
+};
+
+
+Node* Delete(Node *head, int position)
+{
+  Node * current = head;
+  Node * prev = head;
+  
+  if(position ==0)
+  {
+    current = current->next;
+    delete head;
+    return current;
+  }    
+    
+    
+  for(int i = 0 ; i < position ; i++)
+  {
+     prev = current;
+     current=current->next;   
+  }  
+    
+  prev->next = current->next;  
+    
+  delete current;
+  return head;
+    
 }
 
 Node* InsertNth(Node *head, int data, int position) {
@@ -78,6 +104,7 @@ Node* InsertBack(Node *head,int data)
         
     }//else
 }
+
 Node* InsertFront(Node *head,int data)
 {
     Node * insert = new Node;
