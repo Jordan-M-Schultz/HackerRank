@@ -21,7 +21,41 @@ struct Node
     struct Node *next;
 }
 
+Node* InsertNth(Node *head, int data, int position) {
 
+    Node *newNode = new Node();
+    newNode->data = data;
+    newNode->next = NULL;
+
+    if(head == NULL && position != 0) {
+        return head;
+    } else if(head == NULL && position == 0) {
+        head = newNode;
+        return head;
+    }
+
+    if(position == 0) {
+        newNode->next = head;
+        head = newNode;
+        return head;
+    }
+
+    Node* current = head;
+    Node* previous = NULL;
+    int i = 0;
+
+    for(i = 0; i < position; i++) {
+        previous = current;
+        current = current->next;
+        if(current == NULL)
+            break;
+    }
+
+    newNode->next = current;
+    previous->next = newNode;
+    return head;
+
+}
 
 Node* InsertBack(Node *head,int data)
 {
