@@ -25,6 +25,28 @@ struct Node
     struct Node *next;
 };
 
+int CompareLists(Node *headA, Node* headB)
+{
+  while(headA && headB)
+  {
+    if(headA->data == headB->data)
+    {
+        headA = headA->next;
+        headB = headB->next;
+    }
+    else
+        return 0;
+        
+
+  }//while
+    
+    if(!headA && !headB)
+        return 1;
+    
+    return 0;   
+    
+}
+
 
 Node* Delete(Node *head, int position)
 {
