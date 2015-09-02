@@ -15,6 +15,9 @@ using namespace std;
  head pointer input could be NULL as well for empty list
  Node is defined as:
 */
+void testReverse(Node * head);
+void insertData();
+
 
 struct Node
 {
@@ -144,6 +147,68 @@ void ReversePrint(Node *head)
     
   }//while count   
        
+}
+
+
+Node* Reverse(Node *head)
+{
+  if(!head)
+    return NULL;
+    
+  if(!head->next)
+     return head;
+    
+  bool flag = true; 
+  Node* curr = new Node;
+  Node* prev = new Node; 
+  
+  curr = head;
+  prev = curr;
+    
+  while(head){
+      prev = curr;
+      curr = head;
+      head = head->next;
+      curr->next = prev;
+      
+      if(flag)
+      {
+        curr->next = NULL;
+        flag = false;
+      }
+    
+      
+  }
+ 
+  head = curr;
+  head->next = prev;
+  //testReverse(head);
+  
+    
+  // Complete this method
+  return head;
+}
+
+void testReverse(Node * head)
+{
+  while(head){
+    cout << head->data << " -> " ;
+    head = head->next;
+  }  
+    
+    
+}
+
+void insertData(){
+    cout << "own test" << endl;
+    
+    Node * one = new Node;
+    Node * two = new Node;
+    one->data = 1;
+    one->next = NULL;
+    Reverse(one);
+    
+    
 }
 
 
