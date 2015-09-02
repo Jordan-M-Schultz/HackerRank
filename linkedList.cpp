@@ -120,6 +120,33 @@ Node* InsertFront(Node *head,int data)
     
 }
 
+
+void ReversePrint(Node *head)
+{
+  //first loop to find final node beginning from head
+  short count = 0;
+  Node* current = new Node;
+  current = head;
+  
+  while(current){
+    current = current->next;
+    count++;
+  }//while
+    
+  while(count) // loops node # times
+  {
+    current = head;
+      for(int i = 0 ; i < count-1 ; i++)
+      current = current->next;  
+        
+    cout << current->data << endl;
+    count--;
+    
+  }//while count   
+       
+}
+
+
 void Print(Node *head)
 {
     Node* placement = head;
